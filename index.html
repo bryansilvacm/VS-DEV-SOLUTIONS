@@ -4,45 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>VS DEV</title>
   </head>
   <body>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyBRRk2ZR-huXnujH48NqGPlxtSULnMTMNw",
-        authDomain: "vs-dev-solutions.firebaseapp.com",
-        projectId: "vs-dev-solutions",
-        storageBucket: "vs-dev-solutions.appspot.com",
-        messagingSenderId: "446375996258",
-        appId: "1:446375996258:web:f591ee015ce7417363da3b",
-        measurementId: "G-Z12WTTT7HG"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
-
-
     <img id="luz" src="img/luz.png" alt="" />
     <header>
       <img src="img/logo.png" alt="Logo da empres VS" />
       <h2 class="dev">Desenvolvedor Bryan Silva</h2>
-
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
-        rel="stylesheet"
-      />
     </header>
 
     <main>
@@ -56,53 +30,31 @@
 
       <nav>
         <ul>
-          <li class="quemsomos">
-            <a class="quemsomos" href="#" target="_blank">Quem Somos?</a>
-          </li>
-          <li class="portifolio">
-            <a class="portifolio" href="#" target="_blank">Portifólio</a>
-          </li>
-          <li class="instagram">
-            <a
-              class="instagram"
-              href="https://www.instagram.com/bryansilvacm/"
-              target="_blank"
-              >Instagram</a
-            >
-          </li>
-          <li class="whatsapp">
-            <a
-              class="whatsapp"
-              href="https://wa.me/qr/MAC2JCECZDMDH1"
-              target="_blank"
-              >WhatsApp</a
-            >
-          </li>
+          <a class="quemsomos" href="#" target="_blank">
+            <li class="quemsomos">Quem Sou?</li>
+          </a>
+
+          <a class="portifolio" href="#" target="_blank">
+            <li class="portifolio">Portifólio</li>
+          </a>
+
+          <a
+            class="instagram"
+            href="https://www.instagram.com/bryansilvacm/"
+            target="_blank"
+          >
+            <li class="instagram">Instagram</li>
+          </a>
+
+          <a
+            class="whatsapp"
+            href="https://wa.me/qr/MAC2JCECZDMDH1"
+            target="_blank"
+          >
+            <li class="whatsapp">WhatsApp</li></a
+          >
         </ul>
       </nav>
     </main>
-
-    <script>
-      var links = document.getElementsByTagName("li");
-      for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener("mouseover", function () {
-          this.style.background = "yellow";
-        });
-        links[i].addEventListener("mouseout", function () {
-          this.style.background = "";
-        });
-      }
-      var links = document.getElementsByTagName("a");
-      for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener("mouseover", function () {
-          this.style.background = "yellow";
-          this.style.color = "black";
-        });
-        links[i].addEventListener("mouseout", function () {
-          this.style.background = "";
-          this.style.color = "";
-        });
-      }
-    </script>
   </body>
 </html>
