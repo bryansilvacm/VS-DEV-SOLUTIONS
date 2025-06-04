@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap");
+
+:root {
+  --main-bg-color: #0d0d0d;
+  --text-color: #f2e7dc;
+  --highlight-color: yellow;
+  --font-family: "Livvic", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  padding: 2rem 10rem;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+#luz {
+  position: fixed;
+  top: -2%;
+  left: -7%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-around;
+}
+
+
+img {
+  width: 17%;
+  margin:0;
+}
+
+
+
+nav{
+  display:flex;
+  flex-direction:row;
+  width:50%;
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+li {
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 9rem;
+  border-radius: 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:2rem
+}
+a {
+  text-decoration: none;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 2rem;
+  height:2rem;
+}
+.home{
+  background-color: #005C53;
+  color: #ffffff;
+}
+.quemsomos {
+  background-color: #027373;
+  color: #ffffff;
+}
+
+.portifolio {
+  background-color: #038c7f;
+  color: #ffffff;
+}
+
+.instagram {
+  background-color: #a9d9d0;
+  color: #0d0d0d;
+}
+
+.whatsapp {
+  background-color: #f2e7dc;
+  color: #0d0d0d;
+}
+
+li:hover {
+  background-color: var(--highlight-color);
+  color: #181414;
+}
+
+.projeto{
+  
+  height:auto;
+  width:90%;
+  min-height:20rem;
+  display:flex;
+  flex-direction:row;
+  aling-items:center;
+  justify-content:center;
+  margin:auto;
+  margin-bottom:4rem;
+}
+
+a{
+  width:60%;
+}
+.projeto a img{
+  width:100%;
+  border-radius:2rem;
+  margin:auto;
+}
+pre{
+  margin:auto;
+  font-size:1.2rem;
+  width:80%;
+  
+}
+
