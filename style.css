@@ -1,175 +1,283 @@
 @charset "UTF-8";
-      :root {
-        --main-bg-color: #0d0d0d;
-        --text-color: #f2e7dc;
-        --highlight-color: yellow;
-        --font-family: "Livvic", sans-serif;
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+:root {
+  --main-bg-color: #0d0d0d;
+  --text-color: #f2e7dc;
+  --highlight-color: yellow;
+  --font-family: "Livvic", sans-serif;
+}
 
-      body {
-        background-color: var(--main-bg-color);
-        color: var(--text-color);
-        font-family: var(--font-family);
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
+/* Reset básico para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
+}
 
-      #luz {
-        position: fixed;
-        top: -2%;
-        left: -7%;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-      }
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  padding: 1rem; /* Padding base para evitar que o conteúdo grude nas bordas em telas pequenas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da viewport */
+  overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
 
-      main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
-        max-width: 1200px;
-      }
+/* Imagem de fundo/efeito "luz" */
+#luz {
+  position: fixed;
+  top: -5%; /* Ajuste a posição para cobrir melhor a tela */
+  left: -5%; /* Ajuste a posição para cobrir melhor a tela */
+  width: 110%; /* Aumente a largura para cobrir as bordas */
+  height: 110%; /* Aumente a altura para cobrir as bordas */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  z-index: -1; /* Mantém a imagem no fundo */
+  opacity: 0.6; /* Adiciona uma leve transparência para um efeito mais suave */
+}
 
-      header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Largura máxima para telas grandes */
+  padding: 1rem; /* Adiciona um padding interno para não grudar nas bordas em telas menores */
+}
 
-      header img {
-        width: 150px;
-      }
+/* Estilos do cabeçalho */
+header {
+  display: flex;
+  flex-direction: column; /* Padrão mobile: elementos empilhados */
+  align-items: center;
+  gap: 1rem;
+  width: 100%; /* Ocupa a largura total disponível */
+}
 
-      h2 {
-        font-size: 1.5rem;
-        text-align: center;
-      }
+header img {
+  width: 120px; /* Tamanho da logo para telas pequenas */
+  max-width: 100%; /* Garante que a imagem não transborde */
+  height: auto; /* Mantém a proporção da imagem */
+}
 
-      section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
-      }
+h2 {
+  font-size: 1.3rem; /* Tamanho da fonte para telas pequenas */
+  text-align: center;
+  line-height: 1.2; /* Melhora a legibilidade */
+}
 
-      #alinhamento-main {
-        text-align: center;
-      }
+/* Estilos da seção principal (conteúdo e navegação) */
+section {
+  display: flex;
+  flex-direction: column; /* Padrão mobile: elementos empilhados */
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
 
-      h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #ffffff;
-      }
+#alinhamento-main {
+  text-align: center; /* Centraliza o texto em telas pequenas */
+}
 
-      p {
-        font-size: 1.2rem;
-        color: #a9d9d0;
-      }
+h1 {
+  font-size: 2rem; /* Tamanho da fonte do título principal para telas pequenas */
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.1; /* Ajusta a altura da linha para títulos */
+}
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0;
-        align-items: center;
-      }
+p {
+  font-size: 1rem; /* Tamanho da fonte do parágrafo para telas pequenas */
+  color: #a9d9d0;
+  margin-top: 0.5rem; /* Pequena margem superior */
+}
 
-      nav li {
-        width:9rem;
-      }
+/* Estilos da navegação */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Padrão mobile: links empilhados */
+  gap: 0.8rem; /* Espaçamento entre os links */
+  padding: 0;
+  align-items: center;
+  width: 100%; /* Ocupa a largura total disponível */
+  max-width: 300px; /* Limita a largura da coluna de links em telas menores */
+}
 
-      nav a {
-        display: block;
-        padding: 0.8rem 1rem;
-        border-radius: 2rem;
-        font-weight: bold;
-        font-size: 1.1rem;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.3s ease-in-out;
-      }
+nav li {
+  width: 100%; /* Faz com que cada item da lista ocupe 100% da largura do seu container */
+}
 
-      nav a:hover {
-        background-color: var(--highlight-color);
-        color: #181414;
-      }
+nav a {
+  display: block;
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil aos botões */
+}
 
-      .quemsomos {
-        background-color: #027373;
-        color: #ffffff;
-      }
+nav a:hover {
+  background-color: var(--highlight-color);
+  color: #181414;
+  transform: translateY(-2px); /* Efeito de "levantar" no hover */
+}
 
-      .portifolio {
-        background-color: #038c7f;
-        color: #ffffff;
-      }
+/* Cores dos links */
+.quemsomos {
+  background-color: #027373;
+  color: #ffffff;
+}
 
-      .instagram {
-        background-color: #a9d9d0;
-        color: #0d0d0d;
-      }
+.portifolio {
+  background-color: #038c7f;
+  color: #ffffff;
+}
 
-      .whatsapp {
-        background-color: #f2e7dc;
-        color: #0d0d0d;
-      }
+.instagram {
+  background-color: #a9d9d0;
+  color: #0d0d0d;
+}
 
-      @media (min-width: 768px) {
-        header {
-          flex-direction: row;
-          justify-content: center;
-        }
+.whatsapp {
+  background-color: #f2e7dc;
+  color: #0d0d0d;
+}
 
-        header img {
-          width: 180px;
-        }
+/* --- Media Queries --- */
 
-        h2 {
-          font-size: 1.8rem;
-        }
+/* Telas médias (ex: tablets, de 600px a 991px) */
+@media (min-width: 600px) {
+  header img {
+    width: 150px; /* Aumenta o tamanho da logo */
+  }
 
-        section {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
+  h2 {
+    font-size: 1.6rem; /* Aumenta o tamanho da fonte do h2 */
+  }
 
-        #alinhamento-main {
-          text-align: left;
-        }
+  h1 {
+    font-size: 2.8rem; /* Aumenta o tamanho da fonte do h1 */
+  }
 
-        h1 {
-          font-size: 3.5rem;
-        }
+  p {
+    font-size: 1.15rem; /* Aumenta o tamanho da fonte do parágrafo */
+  }
 
-        nav ul {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
+  nav ul {
+    flex-direction: row; /* Links lado a lado em telas médias */
+    flex-wrap: wrap; /* Permite quebrar linha se não houver espaço */
+    justify-content: center; /* Centraliza os links */
+    gap: 1rem; /* Espaçamento entre os links */
+    max-width: none; /* Remove a largura máxima */
+  }
 
-      @media (min-width: 1024px) {
-        nav ul {
-          flex-direction: row;
-          justify-content: center;
-        }
+  nav li {
+    width: auto; /* Permite que o item ocupe apenas a largura do conteúdo */
+    flex-basis: 45%; /* Cada item ocupa quase metade da largura para 2 colunas */
+    max-width: 200px; /* Garante que os botões não fiquem muito largos */
+  }
 
-        nav li {
-          max-width: none;
-        }
-      }
+  nav a {
+    font-size: 1rem; /* Ajusta o tamanho da fonte dos links */
+    padding: 0.7rem 1.2rem; /* Ajusta o padding dos links */
+  }
+}
+
+/* Telas maiores (ex: laptops e desktops, de 992px a 1199px) */
+@media (min-width: 992px) {
+  header {
+    flex-direction: row; /* Logo e título lado a lado */
+    justify-content: center;
+    gap: 2rem; /* Aumenta o espaçamento */
+  }
+
+  header img {
+    width: 180px; /* Aumenta ainda mais o tamanho da logo */
+  }
+
+  h2 {
+    font-size: 1.8rem; /* Aumenta o tamanho da fonte do h2 */
+  }
+
+  section {
+    flex-direction: row; /* Título/parágrafo e navegação lado a lado */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: flex-start; /* Alinha ao topo */
+  }
+
+  #alinhamento-main {
+    text-align: left; /* Alinha o texto à esquerda */
+    flex: 1; /* Permite que ocupe o espaço disponível */
+    padding-right: 2rem; /* Espaçamento à direita */
+  }
+
+  h1 {
+    font-size: 3.5rem; /* Aumenta o tamanho da fonte do h1 */
+  }
+
+  p {
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte do parágrafo */
+  }
+
+  nav {
+    flex: 1; /* Permite que a navegação ocupe o espaço disponível */
+    display: flex; /* Garante que a navegação seja um flex container */
+    justify-content: flex-end; /* Alinha a navegação à direita */
+  }
+
+  nav ul {
+    flex-direction: column; /* Links voltam a ser empilhados para melhor leitura em desktop */
+    align-items: flex-end; /* Alinha os links à direita */
+    gap: 1rem;
+    padding-left: 2rem; /* Espaçamento à esquerda */
+  }
+
+  nav li {
+    width: 100%; /* Garante que os itens de lista ocupem a largura total disponível */
+    max-width: 250px; /* Limita a largura máxima dos botões */
+  }
+
+  nav a {
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte dos links */
+    padding: 0.9rem 1.5rem; /* Ajusta o padding dos links */
+  }
+}
+
+/* Telas muito grandes (ex: monitores wide, acima de 1200px) */
+@media (min-width: 1200px) {
+  main {
+    max-width: 1400px; /* Aumenta a largura máxima para telas maiores */
+  }
+
+  header img {
+    width: 200px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  nav li {
+    max-width: 280px; /* Aumenta a largura máxima dos botões */
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    padding: 1rem 1.8rem;
+  }
+}
